@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { BookingService } from './booking.service';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { LoggerService } from '../logger/logger.service';
@@ -44,5 +44,12 @@ export class BookingController {
         }
 
         return response;
+    }
+
+    @Get()
+    show() {
+        return {
+            message: 'It Works'
+        }
     }
 }
